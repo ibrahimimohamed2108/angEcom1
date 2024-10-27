@@ -18,7 +18,7 @@
         <p><strong>Rating:</strong> {{ product.rating }} / 5</p>
         <p><strong>Stock:</strong> {{ product.stock }} available</p>
         <p><strong>Availability Status:</strong> {{ product.availabilityStatus }}</p>
-        <button class="btn btn-primary mt-auto" (click)="addToCart()">Add to Cart</button>
+        <button class="btn btn-primary mt-auto" (click)="onAddToCart()">Add to Cart</button>
 
         <h2 class="mt-3">Return Policy</h2>
         <p>{{ product.returnPolicy }}</p>

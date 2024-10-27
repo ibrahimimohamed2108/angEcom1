@@ -1,10 +1,63 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<!--<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm py-3">
     <div class="container">
-      <!-- Website Logo -->
-      <a class="navbar-brand" routerLink="/">ibEcom</a>
+       Website Logo 
+      <a class="navbar-brand fw-bold text-primary" routerLink="/" style="font-size: 1.5rem;">ibEcom</a>
+      
+       Navbar Toggle Button for Mobile 
+      <button 
+        class="navbar-toggler" 
+        type="button" 
+        data-bs-toggle="collapse" 
+        data-bs-target="#navbarNav" 
+        aria-controls="navbarNav" 
+        aria-expanded="false" 
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
   
-      <!-- Toggle button for mobile view -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+       Navbar Links 
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active fw-semibold px-3" routerLink="/" routerLinkActive="active">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-semibold px-3" routerLink="/cart" routerLinkActive="active">Cart</a>
+          </li>
+        </ul>
+  
+         Login/Signup Buttons 
+        <ul class="navbar-nav">
+          <li class="nav-item me-2">
+            <a class="btn btn-outline-primary fw-semibold px-4 py-2" routerLink="/login">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-primary fw-semibold px-4 py-2 text-white" routerLink="/signup">Sign Up</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>-->
+  
+<!-- navbar.component.html -->
+<nav class="navbar navbar-expand-lg navbar-light shadow-sm py-3">
+    <div class="container">
+        
+      <!-- Website Logo -->
+      <a class="navbar-brand fw-bold brand-logo" 
+      (click)="navigateToHome()">
+         <span class="brand-text">ib</span>Ecom
+      </a>
+      
+      <!-- Navbar Toggle Button for Mobile -->
+      <button 
+        class="navbar-toggler custom-toggler" 
+        type="button" 
+        data-bs-toggle="collapse" 
+        data-bs-target="#navbarNav" 
+        aria-controls="navbarNav" 
+        aria-expanded="false" 
+        aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
   
@@ -12,21 +65,34 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <a class="nav-link" routerLink="/">Home</a>
+            <a class="nav-link fw-semibold px-3 nav-item-link" 
+            (click)="navigateToHome()">
+               <i class="fas fa-home me-1"></i> Home
+            </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/cart">Cart</a>
+            <a class="nav-link fw-semibold px-3 nav-item-link" 
+               (click)="navigateToCart()">
+               <i class="fas fa-shopping-cart me-1"></i> Cart
+            </a>
           </li>
         </ul>
   
-        <!-- Login/Signup Button -->
-        <ul class="navbar-nav">
+        <!-- Login/Signup Buttons -->
+        <ul class="navbar-nav auth-buttons">
+          <li class="nav-item me-3">
+            <a class="btn btn-outline-primary fw-semibold px-4 py-2 login-btn" 
+               (click)="navigateToLogin()">
+               <i class="fas fa-sign-in-alt me-1"></i> Login
+            </a>
+          </li>
           <li class="nav-item">
-            <a class="btn btn-outline-primary" routerLink="/login">Login</a>
-            <a class="btn btn-outline-primary" routerLink="/login">Sign Up</a>
+            <a class="btn btn-primary fw-semibold px-4 py-2 signup-btn" 
+               (click)="navigateToSignup()">
+               <i class="fas fa-user-plus me-1"></i> Sign Up
+            </a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-  

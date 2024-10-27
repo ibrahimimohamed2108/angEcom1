@@ -12,8 +12,18 @@ import { CartService } from '../services/cart.service';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-  cart!: Cart;
-  private cartService: CartService = inject(CartService);
+  cart: Cart = new Cart(); 
+
+  ngOnInit() {}
+
+  addProductToCart(product: Product) {
+    this.cart.addProduct(product, 1);
+  }
+
+  removeProduct(productId: number) {
+    this.cart.removeProduct(productId); 
+  }
+  /*private cartService: CartService = inject(CartService);
 
   ngOnInit() {
       this.cart = this.cartService.getCart();
@@ -25,5 +35,5 @@ export class CartComponent implements OnInit {
 
   removeProduct(productId: number) {
     this.cartService.removeProduct(productId); 
-  }
+  }*/
 }

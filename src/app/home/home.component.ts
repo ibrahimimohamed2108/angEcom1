@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductComponent } from '../product/product.component';
 import { ProductService } from '../services/product.service';
@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
   selectedCategory: string = 'All';
   searchKey: string = '';
   productService = inject(ProductService);
+  @Output() productAdded = new EventEmitter<Product>(); // Emit event when a product is added to the cart
 
   ngOnInit() {
     this.loadCategories();
@@ -50,5 +51,8 @@ export class HomeComponent implements OnInit {
     } else {
       this.loadProducts(); // Reload all products if search key is empty
     }
+  }
+  addToCart(product: Product) {
+    this.productAdded.emit(product); // Emit event when product is added
   }
 }

@@ -2,6 +2,8 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { DetailsComponent } from './details/details.component';
 import { CartComponent } from './cart/cart.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 export const routes: Routes = [
     {
@@ -18,5 +20,19 @@ export const routes: Routes = [
       path: 'cart',
       component: CartComponent,
       title: 'Your Cart'
-    }
+    },
+    {
+    path: 'login',
+    component: LoginComponent,
+    title: 'login' 
+    },
+    {
+    path: 'signup',
+    component: SignupComponent,
+    title: 'signup' 
+    },
+    { path: '**', 
+      redirectTo: '' 
+    } 
+
 ];

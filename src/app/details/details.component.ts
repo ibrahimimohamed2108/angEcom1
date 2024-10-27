@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, EventEmitter, inject, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductComponent } from '../product/product.component';
 import { ProductService } from '../services/product.service';
@@ -17,7 +17,8 @@ export class DetailsComponent implements OnInit {
   
   private route = inject(ActivatedRoute);
   private productService = inject(ProductService);
-  cartService: any;
+  //cartService: any;
+  @Output() addToCart = new EventEmitter<Product>(); 
 
   ngOnInit(): void {
     const productId = parseInt(this.route.snapshot.params['id'], 10);
@@ -26,9 +27,15 @@ export class DetailsComponent implements OnInit {
       this.product = products.find((p: Product) => p.id === productId);
     });
   }
-  addToCart() {
+  onAddToCart() {
     if (this.product) {
-      this.cartService.addProduct(this.product, 1);
+      this.addToCart.emit(this.product); // Emit product to parent
     }
   }
 }
+  //addToCart() {
+    //if (this.product) {
+      //this.cartService.addProduct(this.product, 1);
+    //}
+  //}
+//}

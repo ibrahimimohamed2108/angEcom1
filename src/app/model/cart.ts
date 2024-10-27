@@ -1,29 +1,37 @@
-import { CartItem } from "./cart-item";
-import { Product } from "./product";
+import { CartItem } from './cart-item';
+import { Product } from './product';
 
 export class Cart {
-    private items: Map<number, CartItem>;
+  private items: Map<number, CartItem>;
 
-    constructor() {
-        this.items = new Map<number, CartItem>();
-    }
+  constructor() {
+    this.items = new Map<number, CartItem>();
+  }
 
-    getItems(): CartItem[] {
-        return Array.from(this.items.values());
-    }
+  getItems(): CartItem[] {
+    return Array.from(this.items.values());
+  }
 
-    addProduct(product: Product, quantity: number): void {
-        const existing = this.items.get(product.id);
-        if (existing) {
-            existing.quantity += quantity;
-        } else {
-            this.items.set(product.id, new CartItem(product, quantity));
-        }
+  addProduct(product: Product, quantity: number): void {
+    if (this.items.has(product.id)) {
+      this.items.get(product.id)!.quantity += quantity; // Increment quantity if already in cart
+    } else {
+      this.items.set(product.id, { product, quantity });
     }
+  }
 
-    removeProduct(productId: number): void {
-        this.items.delete(productId);
-    }
+  removeProduct(productId: number): void {
+    this.items.delete(productId); 
+  }
+
+  getTotalQuantity(): number {
+    let total = 0;
+    this.items.forEach(item => total += item.quantity);
+    return total;
+  }
+
+
+/////////////////////////////////////////////////
 
     updateQuantity(productId: number, quantity: number): void {
         const item = this.items.get(productId);
@@ -38,12 +46,6 @@ export class Cart {
 
     hasProduct(productId: number): boolean {
         return this.items.has(productId);
-    }
-
-    getTotalQuantity(): number {
-        let total = 0;
-        this.items.forEach(item => total += item.quantity);
-        return total;
     }
 
     getTotalPrice(): number {

@@ -1,5 +1,5 @@
-import { Component, inject, Input } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { NgIf } from '@angular/common';
 import { Product } from '../model/product';
 import { CartService } from '../services/cart.service';
@@ -13,16 +13,28 @@ import { CartService } from '../services/cart.service';
 })
 export class ProductComponent {
   @Input() product?: Product;
-  public cartService = inject(CartService);
+  @Output() addToCart = new EventEmitter<Product>(); // Emit event when the product is added to the cart
+  constructor(private router: Router) {}
 
-  
+  navigateToDetails() {
+    if (this.product) {
+      this.router.navigate(['/details', this.product.id]);
+    }
+  }
+
+  onAddToCart() {
+    if (this.product) {
+      this.addToCart.emit(this.product); // Emit product to parent
+    }
+  }
+}
+  /*public cartService = inject(CartService);
+
   addToCart() {
     if (this.product) {
       this.cartService.addProduct(this.product, 1);
     }
-  }
-}
-
+  }*/
 
 
 
