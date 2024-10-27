@@ -1,0 +1,154 @@
+/* login.component.css */
+:root {
+    --primary-color: #0d6efd;
+    --primary-hover: #0b5ed7;
+    --box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+  
+  .login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%);
+    padding: 20px;
+  }
+  
+  .login-box {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: var(--box-shadow);
+    width: 100%;
+    max-width: 480px;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Brand/Logo Styles */
+  .brand-text {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+  }
+  
+  .welcome-text {
+    color: #6c757d;
+    font-size: 1.1rem;
+  }
+  
+  /* Form Styling */
+  .custom-input {
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    padding: 0.75rem 1.25rem;
+    height: auto;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .custom-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.1);
+  }
+  
+  .form-floating > label {
+    padding-left: 1.25rem;
+    color: #6c757d;
+  }
+  
+  .form-floating > .custom-input:focus ~ label,
+  .form-floating > .custom-input:not(:placeholder-shown) ~ label {
+    color: var(--primary-color);
+    transform: scale(0.85) translateY(-0.75rem) translateX(0.15rem);
+  }
+  
+  /* Checkbox Styling */
+  .custom-checkbox {
+    width: 1.1em;
+    height: 1.1em;
+    margin-top: 0.2em;
+    cursor: pointer;
+  }
+  
+  .form-check-label {
+    color: #6c757d;
+    cursor: pointer;
+  }
+  
+  /* Links Styling */
+  .forgot-password {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .forgot-password:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+  }
+  
+  .signup-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  
+  .signup-link:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+  }
+  
+  /* Login Button */
+  .login-btn {
+    padding: 0.75rem;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    background: var(--primary-color);
+    border: none;
+    box-shadow: 0 4px 15px rgba(13, 110, 253, 0.2);
+  }
+  
+  .login-btn:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(13, 110, 253, 0.3);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 576px) {
+    .login-box {
+      padding: 20px;
+    }
+  
+    .brand-text {
+      font-size: 2rem;
+    }
+  
+    .welcome-text {
+      font-size: 1rem;
+    }
+  }
+  .signup-link {
+    cursor: pointer; /* Changes the cursor to a hand icon */
+    text-decoration: none; /* Removes the underline from the link */
+  }
+  
+  .signup-link:hover {
+    text-decoration: underline; /* Adds underline on hover for better UX */
+  }
+  

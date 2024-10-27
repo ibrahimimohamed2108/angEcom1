@@ -141,3 +141,17 @@
   html {
     scroll-behavior: smooth;
   }
+  .nav-item-link {
+    cursor: pointer; /* Changes the cursor to a hand icon */
+  }
+  
+  .auth-buttons .btn {
+    cursor: pointer; /* Changes the cursor for buttons as well */
+  }
+  
+  /* Optional: Add hover effects for better user feedback */
+  .nav-item-link:hover,
+  .auth-buttons .btn:hover {
+    text-decoration: underline; /* Underline on hover */
+  }
+  

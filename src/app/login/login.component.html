@@ -1,1 +1,62 @@
-<p>login works!</p>
+<!-- login.component.html -->
+<div class="login-container">
+    <div class="login-box">
+      <!-- Logo/Brand Section -->
+      <div class="text-center mb-4">
+        <h1 class="brand-text">ib<span class="text-primary">Ecom</span></h1>
+        <p class="welcome-text">Welcome back! Please login to your account.</p>
+      </div>
+  
+      <!-- Login Form -->
+      <form class="login-form">
+        <!-- Email Field -->
+        <div class="form-floating mb-4">
+          <input 
+            type="email" 
+            class="form-control custom-input" 
+            id="emailInput" 
+            placeholder="name@example.com">
+          <label for="emailInput">
+            <i class="fas fa-envelope me-2"></i>Email address
+          </label>
+        </div>
+  
+        <!-- Password Field -->
+        <div class="form-floating mb-3">
+          <input 
+            type="password" 
+            class="form-control custom-input" 
+            id="passwordInput" 
+            placeholder="Password">
+          <label for="passwordInput">
+            <i class="fas fa-lock me-2"></i>Password
+          </label>
+        </div>
+  
+        <!-- Remember Me & Forgot Password -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <div class="form-check">
+            <input 
+              type="checkbox" 
+              class="form-check-input custom-checkbox" 
+              id="rememberMe">
+            <label class="form-check-label" for="rememberMe">
+              Remember me
+            </label>
+          </div>
+          <a href="#" class="forgot-password">Forgot Password?</a>
+        </div>
+  
+        <!-- Login Button -->
+        <button type="submit" class="btn btn-primary w-100 login-btn mb-4">
+          <i class="fas fa-sign-in-alt me-2"></i>Login
+        </button>
+  
+        <!-- Sign Up Link -->
+        <div class="text-center">
+          <span class="me-2">Don't have an account?</span>
+          <a routerLink="/signup" class="signup-link" (click)="navigateToSignup()">Sign up </a>
+        </div>
+      </form>
+    </div>
+  </div>

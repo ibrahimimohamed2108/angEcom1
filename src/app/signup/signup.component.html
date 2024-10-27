@@ -1,1 +1,99 @@
-<p>signup works!</p>
+<!-- signup.component.html -->
+<div class="signup-container">
+    <div class="signup-box">
+      <!-- Logo/Brand Section -->
+      <div class="text-center mb-4">
+        <h1 class="brand-text">ib<span class="text-primary">Ecom</span></h1>
+        <p class="welcome-text">Create your account and start shopping</p>
+      </div>
+  
+      <!-- Signup Form -->
+      <form class="signup-form">
+        <!-- Name Fields Row -->
+        <div class="row mb-4">
+          <div class="col-md-6">
+            <div class="form-floating">
+              <input 
+                type="text" 
+                class="form-control custom-input" 
+                id="firstNameInput" 
+                placeholder="First Name">
+              <label for="firstNameInput">
+                <i class="fas fa-user me-2"></i>First Name
+              </label>
+            </div>
+          </div>
+          <div class="col-md-6 mt-4 mt-md-0">
+            <div class="form-floating">
+              <input 
+                type="text" 
+                class="form-control custom-input" 
+                id="lastNameInput" 
+                placeholder="Last Name">
+              <label for="lastNameInput">
+                <i class="fas fa-user me-2"></i>Last Name
+              </label>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Email Field -->
+        <div class="form-floating mb-4">
+          <input 
+            type="email" 
+            class="form-control custom-input" 
+            id="emailInput" 
+            placeholder="name@example.com">
+          <label for="emailInput">
+            <i class="fas fa-envelope me-2"></i>Email address
+          </label>
+        </div>
+  
+        <!-- Password Field -->
+        <div class="form-floating mb-4">
+          <input 
+            type="password" 
+            class="form-control custom-input" 
+            id="passwordInput" 
+            placeholder="Password">
+          <label for="passwordInput">
+            <i class="fas fa-lock me-2"></i>Password
+          </label>
+        </div>
+  
+        <!-- Confirm Password Field -->
+        <div class="form-floating mb-4">
+          <input 
+            type="password" 
+            class="form-control custom-input" 
+            id="confirmPasswordInput" 
+            placeholder="Confirm Password">
+          <label for="confirmPasswordInput">
+            <i class="fas fa-lock me-2"></i>Confirm Password
+          </label>
+        </div>
+  
+        <!-- Terms and Conditions -->
+        <div class="form-check mb-4">
+          <input 
+            type="checkbox" 
+            class="form-check-input custom-checkbox" 
+            id="termsCheck">
+          <label class="form-check-label" for="termsCheck">
+            I agree to the <a href="#" class="terms-link">Terms and Conditions</a>
+          </label>
+        </div>
+  
+        <!-- Sign Up Button -->
+        <button type="submit" class="btn btn-primary w-100 signup-btn mb-4">
+          <i class="fas fa-user-plus me-2"></i>Create Account
+        </button>
+  
+        <!-- Login Link -->
+        <div class="text-center">
+          <span class="me-2">Already have an account?</span>
+          <a routerLink="/login" class="login-link" (click)="navigateToLogin()">Login </a>
+        </div>
+      </form>
+    </div>
+  </div>

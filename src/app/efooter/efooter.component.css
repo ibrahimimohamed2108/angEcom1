@@ -1,0 +1,23 @@
+/* footer.component.css */
+footer {
+    background-color: #343a40; /* Dark background for the footer */
+    padding: 40px 0; /* Top and bottom padding */
+  }
+  
+  footer h5 {
+    color: #ffffff; /* White color for headings */
+  }
+  
+  footer p, footer a {
+    color: #d1d1d1; /* Light grey color for text and links */
+  }
+  
+  footer a:hover {
+    color: #ffffff; /* Change link color on hover */
+    text-decoration: underline; /* Add underline on hover */
+  }
+  
+  footer .border-light {
+    border-color: rgba(255, 255, 255, 0.1); /* Light border for the separator */
+  }
+  
