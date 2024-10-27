@@ -1,0 +1,29 @@
+<div class="container my-4">
+  <h2>Shopping Cart</h2>
+
+  <div *ngIf="!cart || cart.getItems().length === 0">Your cart is empty.</div>
+
+  <div *ngIf="cart && cart.getItems().length > 0">
+      <table class="table">
+          <thead>
+              <tr>
+                  <th>Product</th>
+                  <th>Quantity</th>
+                  <th>Actions</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let item of cart.getItems()">
+                  <td>{{ item.product.title }}</td>
+                  <td>{{ item.quantity }}</td> 
+                  <td>
+                      <button class="btn btn-danger" (click)="removeProduct(item.product.id)">Remove</button>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+
+      <!-- Display total quantity -->
+      <h4>Total Quantity: {{ cart.getTotalQuantity() }}</h4>
+  </div>
+</div>
