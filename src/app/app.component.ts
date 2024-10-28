@@ -11,5 +11,5 @@ import { EfooterComponent } from './efooter/efooter.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'ibEcom';
+  title = 'iBrahimiEcom';
 }

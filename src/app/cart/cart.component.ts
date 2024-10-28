@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, Input, OnInit } from '@angular/core';
 import { Cart } from '../model/cart';
 import { Product } from "../model/product";
 import { CartService } from '../services/cart.service';
+import { CartItem } from '../model/cart-item';
 
 @Component({
   selector: 'app-cart',
@@ -13,17 +14,14 @@ import { CartService } from '../services/cart.service';
 })
 export class CartComponent implements OnInit {
   cart: Cart = new Cart(); 
-
-  ngOnInit() {}
-
-  addProductToCart(product: Product) {
+  //@Input() cartItem !: CartItem;
+  /*addProductToCart(product: Product) {
     this.cart.addProduct(product, 1);
   }
-
   removeProduct(productId: number) {
     this.cart.removeProduct(productId); 
-  }
-  /*private cartService: CartService = inject(CartService);
+  }*/
+  private cartService: CartService = inject(CartService);
 
   ngOnInit() {
       this.cart = this.cartService.getCart();
@@ -35,5 +33,5 @@ export class CartComponent implements OnInit {
 
   removeProduct(productId: number) {
     this.cartService.removeProduct(productId); 
-  }*/
+  }
 }

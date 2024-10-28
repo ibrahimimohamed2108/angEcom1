@@ -4,6 +4,7 @@ import { ProductComponent } from '../product/product.component';
 import { ProductService } from '../services/product.service';
 import { Product } from '../model/product';
 import { FormsModule } from '@angular/forms';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-home',
@@ -18,7 +19,8 @@ export class HomeComponent implements OnInit {
   selectedCategory: string = 'All';
   searchKey: string = '';
   productService = inject(ProductService);
-  @Output() productAdded = new EventEmitter<Product>(); // Emit event when a product is added to the cart
+  cartservice = inject(CartService)
+  //@Output() productAdded = new EventEmitter<Product>(); // Emit event when a product is added to the cart
 
   ngOnInit() {
     this.loadCategories();
@@ -52,7 +54,11 @@ export class HomeComponent implements OnInit {
       this.loadProducts(); // Reload all products if search key is empty
     }
   }
+  /*
   addToCart(product: Product) {
-    this.productAdded.emit(product); // Emit event when product is added
-  }
+    this.productAdded.emit(product); 
+  }*/
+    addToCart(product: Product) {
+      this.cartservice.addProduct(product,1);// i want to be able to add as much as i want in the quantity of a product to the cart in the future
+    }
 }

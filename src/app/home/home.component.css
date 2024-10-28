@@ -34,3 +34,128 @@ section.listing a::after {
   color: blue;
   cursor: pointer;
 }
+/**************************************/
+/* Variables to match navbar */
+:root {
+  --primary-color: #0d6efd;
+  --primary-hover: #0b5ed7;
+  --text-color: #2c3e50;
+  --transition-speed: 0.3s;
+}
+
+/* Premium Title */
+.premium-title {
+  color: var(--text-color);
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.premium-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: var(--primary-color);
+  border-radius: 2px;
+}
+
+/* Filters Container */
+.filters-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Category Select Styling */
+.category-select {
+  min-width: 200px;
+  flex-shrink: 0;
+}
+
+.category-select .form-select {
+  border: 2px solid rgba(13, 110, 253, 0.1);
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: 500;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+}
+
+.category-select .form-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.1);
+}
+
+.category-select .form-select:hover {
+  border-color: var(--primary-color);
+}
+
+/* Search Input Styling */
+.search-input {
+  flex-grow: 1;
+  max-width: 500px;
+}
+
+.search-input .form-control {
+  border: 2px solid rgba(13, 110, 253, 0.1);
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all var(--transition-speed) ease;
+}
+
+.search-input .form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.1);
+}
+
+.search-input .form-control:hover {
+  border-color: var(--primary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .filters-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .category-select,
+  .search-input {
+    width: 100%;
+    max-width: none;
+  }
+
+  .category-select {
+    margin-bottom: 15px;
+  }
+}
+
+/* Optional: Add hover animations */
+.form-select:hover,
+.form-control:hover {
+  transform: translateY(-2px);
+}
+
+/* Optional: Add transition for smooth interactions */
+.form-select,
+.form-control {
+  transition: all 0.3s ease;
+}
+
+/* Optional: Style the select options */
+.form-select option {
+  padding: 10px;
+  font-weight: 500;
+}

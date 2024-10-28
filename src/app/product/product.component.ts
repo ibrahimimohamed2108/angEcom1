@@ -13,7 +13,7 @@ import { CartService } from '../services/cart.service';
 })
 export class ProductComponent {
   @Input() product?: Product;
-  @Output() addToCart = new EventEmitter<Product>(); // Emit event when the product is added to the cart
+  @Output() addToCart = new EventEmitter<Product>(); 
   constructor(private router: Router) {}
 
   navigateToDetails() {
@@ -24,7 +24,7 @@ export class ProductComponent {
 
   onAddToCart() {
     if (this.product) {
-      this.addToCart.emit(this.product); // Emit product to parent
+      this.addToCart.emit(this.product); 
     }
   }
 }

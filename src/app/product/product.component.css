@@ -29,3 +29,14 @@
     content: "\203A";
     margin-left: 5px;
   }
+  /* Make the entire card clickable and show a pointer cursor */
+.card {
+  cursor: pointer;
+}
+
+/* Optional: Add a hover effect for better visual feedback */
+.card:hover {
+  transform: scale(1.02); /* Slightly increase size on hover */
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Enhance shadow on hover */
+}
