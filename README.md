@@ -60,14 +60,15 @@ Ensure that you have the following installed:
 
 1. **Build the project**:
     ```bash
-    ng build --prod
+    ng build 
     ```
 
 2. **Build the Docker image**:
     ```bash
     docker build -t ibrahimimohamed2108/emishop:v2 .
     ```
-
+    (in the same folder as Dockerfile)
+    (C:\Users\moham\Desktop\angEcom1\front\e-commerce\browser>  docker build -t ibrahimimohamed2108/emishop:v2 .)
 3. **Push the Docker image to Docker Hub**:
     ```bash
     docker push ibrahimimohamed2108/emishop:v2
@@ -90,7 +91,7 @@ This application requires Firebase Firestore for data persistence. To set up Fir
 ## Author
 
 **Mohamed Ibrahimi**  
-First-year Software Engineering Student  
+Mohammadia school of engineers computer science Student  
 [Docker Hub Repository](https://hub.docker.com/repository/docker/ibrahimimohamed2108/emishop)
 
 ## License
