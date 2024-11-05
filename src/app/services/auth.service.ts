@@ -1,12 +1,23 @@
 import { inject, Injectable } from '@angular/core';
-import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, UserCredential } from '@angular/fire/auth';
-import { from, Observable } from 'rxjs';
+import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, UserCredential,signOut,onAuthStateChanged  } from '@angular/fire/auth';
+import { BehaviorSubject, from, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   firebaseAuth = inject(Auth);
+  private userSubject = new BehaviorSubject<any>(null); // Use BehaviorSubject to track the user's auth state
+
+  constructor() {
+    onAuthStateChanged(this.firebaseAuth, (user) => {
+      this.userSubject.next(user); // Update the subject when the auth state changes
+    });
+  }
+
+  get user$(): Observable<any> {
+    return this.userSubject.asObservable(); // Expose the user observable
+  }
   register (
     email: string,
     username: string,
@@ -33,5 +44,13 @@ export class AuthService {
       });
 
     return from(promise); // Return Observable<UserCredential> here
+  }
+
+  signOut(): Observable<void> {
+    const promise = signOut(this.firebaseAuth)
+      .then(() => {
+        console.log("Sign out successful");
+      });
+    return from(promise);
   }
 }

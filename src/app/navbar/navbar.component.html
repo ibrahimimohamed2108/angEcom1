@@ -38,20 +38,26 @@
         </ul>
   
         <!-- Login/Signup Buttons -->
-        <ul class="navbar-nav auth-buttons">
+        <ul class="navbar-nav auth-buttons" *ngIf="(user$ | async) === null; else loggedIn">
           <li class="nav-item me-3">
-            <a class="btn btn-outline-primary fw-semibold px-4 py-2 login-btn" 
-               (click)="navigateToLogin()">
+            <a class="btn btn-outline-primary fw-semibold px-4 py-2 login-btn" (click)="navigateToLogin()">
                <i class="fas fa-sign-in-alt me-1"></i> Login
             </a>
           </li>
           <li class="nav-item">
-            <a class="btn btn-primary fw-semibold px-4 py-2 signup-btn" 
-               (click)="navigateToSignup()">
+            <a class="btn btn-primary fw-semibold px-4 py-2 signup-btn" (click)="navigateToSignup()">
                <i class="fas fa-user-plus me-1"></i> Sign Up
             </a>
           </li>
         </ul>
+
+        <ng-template #loggedIn>
+          <li class="nav-item me-3">
+            <a class="btn btn-danger fw-semibold px-4 py-2 logout-btn" (click)="signOut()">
+               <i class="fas fa-sign-out-alt me-1"></i> Sign Out
+            </a>
+          </li>
+        </ng-template>
       </div>
     </div>
-  </nav>
+</nav>
