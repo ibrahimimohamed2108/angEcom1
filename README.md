@@ -15,16 +15,14 @@ This is an e-commerce application built with **Angular 14** and deployed with **
 
 ## Technologies
 
-- **Frontend**: Angular 14, TypeScript
-- **Backend**: Firebase Firestore for database storage
+- **Frontend**: Angular 18, TypeScript
+- **Backend**: Firebase Firestore for database storage, fireAuth for Login/signUP
 - **Docker**: Containerization of the Angular application for easy deployment
 
 ## Project Structure
 
-```plaintext
+```plaintext (not all included)
 ├── src/                  # Angular source files
-├── Dockerfile            # Dockerfile for building the app container
-├── .dockerignore         # Files and folders to ignore in the Docker build
 ├── README.md             # Project documentation
 └── package.json          # Project dependencies and scripts
 ```
