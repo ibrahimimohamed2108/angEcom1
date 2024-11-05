@@ -3,6 +3,7 @@
     "/",
     "/cart",
     "/login",
+    "/order",
     "/signup"
   ]
 }
