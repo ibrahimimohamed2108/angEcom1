@@ -111,23 +111,32 @@
     text-decoration: underline;
   }
   
-  /* Login Button */
-  .login-btn {
-    padding: 0.75rem;
-    border-radius: 10px;
-    font-weight: 600;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-    background: var(--primary-color);
-    border: none;
-    box-shadow: 0 4px 15px rgba(13, 110, 253, 0.2);
-  }
-  
-  .login-btn:hover {
-    background: var(--primary-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(13, 110, 253, 0.3);
-  }
+/* Login Button */
+.login-btn {
+  padding: 0.75rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  background: var(--primary-color);
+  border: none;
+  box-shadow: 0 4px 15px rgba(13, 110, 253, 0.2);
+  color: rgb(121, 116, 116); /* Ensure text is visible */
+}
+
+.login-btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(13, 110, 253, 0.3);
+}
+
+.login-btn:disabled {
+  background: #6c757d; /* Use a gray color for the disabled state */
+  color: #fff; /* Ensure the text is still readable */
+  box-shadow: none; /* Remove shadow when disabled */
+  cursor: not-allowed; /* Change cursor to indicate disabled state */
+}
+
   
   /* Responsive Design */
   @media (max-width: 576px) {
