@@ -23,6 +23,9 @@
         </tbody>
       </table>
       <h4>Total Quantity: {{ cart.getTotalQuantity() }}</h4>
+      <h4>Total Price: {{ cart.getTotalPrice() }}</h4>
+      <button class="btn btn-success" (click)="confirmOrder()">Confirm Order</button>
+
     </div>
   </div>
   

@@ -1,0 +1,30 @@
+<div class="container my-4">
+  <h2 class="text-center mb-4">Your Order</h2>
+
+  <div *ngIf="!orderDetails.length" class="alert alert-info text-center">
+      No items to display.
+  </div>
+
+  <div *ngIf="orderDetails.length > 0">
+      <table class="table table-striped table-bordered">
+          <thead class="table-dark">
+              <tr>
+                  <th>Product</th>
+                  <th>Quantity</th>
+                  <th>Price</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let item of orderDetails">
+                  <td>{{ item.product.title }}</td>
+                  <td>{{ item.quantity }}</td>
+                  <td>{{ (item.product.price * item.quantity)}} Dollar </td>
+              </tr>
+          </tbody>
+      </table>
+      <h4 class="text-end">Total Price: {{ totalPrice }} Dollar </h4>
+      <div class="text-center mt-4">
+          <button class="btn btn-success btn-lg" (click)="confirmOrder()">Confirm Order</button>
+      </div>
+  </div>
+</div>

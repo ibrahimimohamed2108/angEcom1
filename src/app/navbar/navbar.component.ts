@@ -49,4 +49,8 @@ export class NavbarComponent {
       this.router.navigate(['/']); 
     });
   }
+  navigateToOrders() {
+    this.router.navigate(['/order']); 
+  }
+  
 }

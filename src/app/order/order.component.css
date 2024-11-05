@@ -1,0 +1,28 @@
+/* Customize the table styling */
+.table {
+    margin-top: 20px;
+    border-radius: 0.5rem;
+    overflow: hidden; /* To round the corners */
+}
+
+/* Enhance button styling */
+.btn-success {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+}
+
+/* Alert styling */
+.alert {
+    margin-top: 20px;
+}
+
+/* Center the total price */
+.text-end {
+    font-weight: bold;
+}
+
+/* Add some margin to the h2 element */
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+}

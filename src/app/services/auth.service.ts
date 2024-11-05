@@ -7,7 +7,9 @@ import { BehaviorSubject, from, Observable } from 'rxjs';
 })
 export class AuthService {
   firebaseAuth = inject(Auth);
-  private userSubject = new BehaviorSubject<any>(null); // Use BehaviorSubject to track the user's auth state
+  //private
+  userSubject = new BehaviorSubject<any>(null); // Use BehaviorSubject to track the user's auth state
+  currentUser: any;
 
   constructor() {
     onAuthStateChanged(this.firebaseAuth, (user) => {
@@ -53,4 +55,6 @@ export class AuthService {
       });
     return from(promise);
   }
+
+  
 }

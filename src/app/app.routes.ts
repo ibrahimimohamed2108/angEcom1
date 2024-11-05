@@ -4,6 +4,8 @@ import { DetailsComponent } from './details/details.component';
 import { CartComponent } from './cart/cart.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { OrderComponent } from './order/order.component';
+import { AuthGuard } from './services/auth.guard';
 
 export const routes: Routes = [
     {
@@ -31,8 +33,16 @@ export const routes: Routes = [
     component: SignupComponent,
     title: 'signup' 
     },
-    { path: '**', 
-      redirectTo: '' 
+    {
+    path: 'order',
+    component: OrderComponent,
+    title: 'Your Order' ,
+    canActivate: [AuthGuard] // Protect the Order route with AuthGuard
+
+    },
+    { 
+    path: '**', 
+    redirectTo: '' 
     } 
 
 ];
