@@ -4,6 +4,7 @@ import { Cart } from '../model/cart';
 import { Product } from "../model/product";
 import { CartService } from '../services/cart.service';
 import { Router } from '@angular/router';
+import { CartToOrderService } from '../services/cart-to-order.service';
 
 @Component({
   selector: 'app-cart',
@@ -15,6 +16,8 @@ import { Router } from '@angular/router';
 export class CartComponent implements OnInit {
   cart: Cart = new Cart(); 
   private cartService: CartService = inject(CartService);
+  private cartToOrderService: CartToOrderService = inject(CartToOrderService); 
+
 
   ngOnInit() {
       this.cart = this.cartService.getCart();
@@ -28,14 +31,16 @@ export class CartComponent implements OnInit {
     this.cartService.removeProduct(productId); 
   }
   constructor(private router: Router){}
-  confirmOrder() {
-    // Navigate to the order component and pass the cart items
-    const orderDetails = this.cart.getItems(); // Get current items in the cart
-    this.router.navigate(['/order'], { state: { orderDetails } }); // Pass orderDetails via state
-  }
 
+
+  confirmOrder() {
+    const orderDetails = this.cart.getItems(); 
+    this.cartToOrderService.setOrderDetails(orderDetails); // Store order details in the service
+    this.router.navigate(['/order']); // Navigate to the order component
+  }
 }
-    //@Input() cartItem !: CartItem;
+    
+//@Input() cartItem !: CartItem;
   /*addProductToCart(product: Product) {
     this.cart.addProduct(product, 1);
   }
