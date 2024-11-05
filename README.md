@@ -1,4 +1,3 @@
-Voici le fichier `README.md` stylisé pour ton projet :
 
 ---
 
