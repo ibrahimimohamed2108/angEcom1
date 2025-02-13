@@ -41,8 +41,8 @@ Ensure that you have the following installed:
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/ibrahimimohamed2108/your-repo.git
-    cd your-repo
+    git clone https://github.com/ibrahimimohamed2108/angEcom1.git
+    cd angEcom1
     ```
 
 2. **Install dependencies**:
