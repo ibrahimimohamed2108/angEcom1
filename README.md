@@ -68,10 +68,10 @@ Ensure that you have the following installed:
     docker build -t ibrahimimohamed2108/emishop:v2 .
     ```
     (in the same folder as Dockerfile)
-    (C:\Users\moham\Desktop\angEcom1\front\e-commerce\browser>  docker build -t ibrahimimohamed2108/emishop:v2 .)
+    (.\angEcom1\front\e-commerce\browser>  docker build -t ibrahimimohamed2108/emishop:v2 .)
 3. **Push the Docker image to Docker Hub**:
     ```bash
-    docker push ibrahimimohamed2108/emishop:v2
+    docker pull ibrahimimohamed2108/emishop:v2
     ```
 
 4. **Run the Docker container**:
